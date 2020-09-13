@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5 - Calcula Troco</title>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <button onclick="comprar()">Comprar produto</button>
+    <script>
+        function comprar() {
+            var produto = prompt("Qual produto está comprando?")
+            var preço = Number(prompt(`Quanto custa ${produto} que você está comprando?`))
+            var pagamento = Number(prompt(`Qual o valor que você deu para pagar ${produto}`))
+            alert(
+                `Você comprou ${produto} que custou ${preço.toLocaleString("pt-br",)}.\n` +
+                `Deu ${pagamento} em dinheiro e vai receber ${pagamento - preço} de troco.\n` +
+                "Volte sempre!"
+            )}
+    </script>
+</body>
+</html>
