@@ -9,13 +9,16 @@
     <h1>Calculando o Troco</h1>
     <button onclick="comprar()">Comprar produto</button>
     <script>
+        function emReal(n) {
+            return n.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+        }
         function comprar() {
             var produto = prompt("Qual produto está comprando?")
             var preço = Number(prompt(`Quanto custa ${produto} que você está comprando?`))
             var pagamento = Number(prompt(`Qual o valor que você deu para pagar ${produto}`))
             alert(
-                `Você comprou ${produto} que custou ${preço.toLocaleString("pt-br",)}.\n` +
-                `Deu ${pagamento} em dinheiro e vai receber ${pagamento - preço} de troco.\n` +
+                `Você comprou ${produto} que custou ${emReal(preço)}.\n` +
+                `Deu ${emReal(pagamento)} em dinheiro e vai receber ${emReal(pagamento - preço)} de troco.\n` +
                 "Volte sempre!"
             )}
     </script>
