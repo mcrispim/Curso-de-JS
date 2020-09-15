@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 7 - Conversor Monetário</title>
+</head>
+<body>
+    <h1>Conversos R$ => US$</h1>
+    <button onclick="converter()">Converter</button>
+    <section id="res">Clique no botão acima para converter.</section>
+    <script>
+        var dolar = window.prompt('Antes de mais nada. Quanto está o dólar agora?')
+        function emReal(n) {
+            return n.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+        }
+        function emDolar(n) {
+            return n.toLocaleString('us', { style: 'currency', currency: 'USD' })
+        }
+        function converter() {
+            var reais = Number(window.prompt('Quantos reais você tem na carteira?'))
+            var res = window.document.querySelector('section#res')
+            res.innerHTML = `Com ${emReal(reais)} você pode comprar ${emDolar(reais / dolar)}`
+        }
+    </script>
+</body>
+</html>
