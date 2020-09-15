@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 6 - Conversor de Temperaturas</title>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="converter()">Converter</button>
+    <section id="res">Clique no botão acima para iniciar.</section>
+    <script>
+        function converter() {
+            var celsius = Number(window.prompt('Digite uma temperatura em graus Celsius'))
+            var fahrenheit = ((celsius * 9 / 5) + 32)
+            var kelvin = celsius + 273
+            var res = window.document.querySelector('section#res')
+            res.innerHTML = `<h2>A temperatura de ${celsius} corresponde a</h2>`
+            res.innerHTML += `<p>${fahrenheit} graus Fahrenheit e a</p>`
+            res.innerHTML += `<p>${kelvin} graus Kelvin.</p>`
+        }
+    </script>
+</body>
+</html>
