@@ -15,9 +15,9 @@
             var fahrenheit = ((celsius * 9 / 5) + 32)
             var kelvin = celsius + 273
             var res = window.document.querySelector('section#res')
-            res.innerHTML = `<h2>A temperatura de ${celsius} corresponde a</h2>`
-            res.innerHTML += `<p>${fahrenheit} graus Fahrenheit e a</p>`
-            res.innerHTML += `<p>${kelvin} graus Kelvin.</p>`
+            res.innerHTML = `<h2>A temperatura de ${celsius.toLocaleString('pt-br', {style: 'decimal'})} corresponde a</h2>`
+            res.innerHTML += `<p>${fahrenheit.toLocaleString('pt-br', {style: 'decimal'})} graus Fahrenheit e a</p>`
+            res.innerHTML += `<p>${kelvin.toLocaleString('pt-br', {style: 'decimal'})} graus Kelvin.</p>`
         }
     </script>
 </body>
