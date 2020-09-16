@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 9 - Reajuste Salarial</title>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button onclick="calcular()">Reajustar Salário</button>
+    <section id="res">Clique no botão acima para iniciar.</section>
+    <script>
+        function emReal(n) {
+            return n.toLocaleString('pt-br', { style: 'currency', currency: 'BRL'})
+        }
+        function calcular() {
+            var nome = window.prompt('Qual é o nome do funcionário?')
+            var salário = Number(window.prompt(`Qual é o salário de ${nome}?`))
+            var reajuste = Number(window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
+            var res = window.document.querySelector('section#res')
+            res.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>`
+            res.innerHTML += `<p>O salário atual era de ${emReal(salário)}.</p>`
+            res.innerHTML += `<p>Com um aumento de ${reajuste.toLocaleString('pt-br', { style: 'decimal'})}%, o salário vai aumentar em ${emReal(salário * reajuste / 100)} no próximo mês.</p>`
+            res.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar ${emReal(salário + salário * reajuste / 100)}.</p>`
+
+        }
+    </script>
+</body>
+</html>
