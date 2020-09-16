@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 10 - Fórmula de Bhaskara</title>
+</head>
+<body>
+    <H1>Resolvendo Bhaskara</H1>
+    <button onclick="calcular()">Calcular</button>
+    <section id="res">Considerando uma equação no formato <strong>ax2 + bx + c = 0</strong>, aperte o botão acima para calcular o valor de <strong>delta</strong>.</section>
+    <script>
+        function calcular() {
+            var a = prompt('Qual o valor de a?')
+            var b = prompt('Qual o valor de b?')
+            var c = prompt('Qual o valor de c?')
+            var res = document.querySelector('section#res')
+            res.innerHTML = '<h2>Resultado:</h2>'
+            res.innerHTML += `<p>A equação atual é ${a}x2 + ${b}x + ${c} = 0</p>`
+            res.innerHTML += `<p>O cálculo realizado será delta = ${b}2 - 4 * ${a} *  ${c}</p>`
+            res.innerHTML += `<p>O valor calculado foi delta = ${b ** 2 - 4 * a * c}</p>`
+        }
+    </script>
+</body>
+</html>
