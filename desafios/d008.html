@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 8 - Calculando Descontos</title>
+</head>
+<body>
+    <h1>Calculando Descontos</h1>
+    <button onclick="calcular()">Desconto de 10%</button>
+    <section id="res">Clique no botão acima para iniciar.</section>
+    <script>
+
+        function emReal(n) {
+            return n.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+        }
+
+        function calcular() {
+            var prod = window.prompt('Qual o produto que você está comprando?')
+            var preço = Number(window.prompt(`Qual o preço de ${prod}?`))
+            var res = window.document.querySelector('section#res')
+            res.innerHTML = `<h1>Calculando desconto de 10% para ${prod}.</h1>`
+            res.innerHTML += `<p>O preço original era de ${emReal(preço)}.</p>`
+            res.innerHTML += `<p>Você acaba de ganhar ${emReal(preço * 0.1)} de desconto (-10%).</p>`
+            res.innerHTML += `<p>No fim, você vai pagar ${emReal(preço * 0.9)} no produto ${prod}.</p>`
+
+        }
+    </script>
+</body>
+</html>
