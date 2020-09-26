@@ -16,8 +16,8 @@ function contar() {
         }
         var resultado = "";
         for (let i = n_start; i <= n_end; i += n_step) {
-            resultado = resultado + String(i) + '&#1f449' 
+            resultado = resultado + String(i) + '\u{1f449}' 
         }
-        res.innerHTML = resultado
+        res.innerHTML = resultado + '\u{1f3c1}'
         }
 }
